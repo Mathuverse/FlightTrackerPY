@@ -9,9 +9,9 @@ class NotificationManager:
     def sendEmail(self,msg):
         with smtplib.SMTP("smtp.gmail.com",port=587) as connection:
             connection.starttls()
-            connection.login(MY_EMAIL, MY_PASS)
+            connection.login(MYEMAIL, PASS)
             connection.sendmail(
-                from_addr=MY_EMAIL,
+                from_addr=MYEMAIL,
                 to_addrs="Mathusan54@gmail.com",
                 msg=msg
             )
