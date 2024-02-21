@@ -39,3 +39,5 @@ class DataManager:
             print("Update successful")
         except requests.exceptions.RequestException as e:
             print(f"Failed to update data: {e}")
+    
+

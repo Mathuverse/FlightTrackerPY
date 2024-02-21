@@ -12,6 +12,7 @@ HEADERS = {
 
 class FlightSearch:
 
+    #Search the code for the city we looking for
     def get_code(self, city_name):
         QUERY = {
             "term": f"{city_name}",
