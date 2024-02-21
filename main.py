@@ -16,15 +16,15 @@ for dic in google_data:
     min = 1000000
     msg=""
     print(dic )
-    flights= flight_data.get_flights_data(dic["code"])
-    for f in flights:
+    # flights= flight_data.get_flights_data(dic["code"])
+    # for f in flights:
 
-        # print(f)dic["lowestPrice"]
-        if f["price"] <= min and f["price"] < dic["lowestPrice"]:
-            min = f["price"]
-            msg = f"Subject: AIRPLANE PRICES \n\n FROM: {f['flyFrom']} TO: {f['flyTo']} price : {f['price']} {f['deep_link']}"
-            msg.encode("utf-8")
-            email.sendEmail(msg)
+    #     # print(f)dic["lowestPrice"]
+    #     if f["price"] <= min and f["price"] < dic["lowestPrice"]:
+    #         min = f["price"]
+    #         msg = f"Subject: AIRPLANE PRICES \n\n FROM: {f['flyFrom']} TO: {f['flyTo']} price : {f['price']} {f['deep_link']}"
+    #         msg.encode("utf-8")
+    #         email.sendEmail(msg)
 
 
 for dic in google_data:

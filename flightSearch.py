@@ -17,5 +17,15 @@ class FlightSearch:
             "term": f"{city_name}",
             "location_types":"city"
                 }
-        self.response = requests.get(url=ENDPOINT, headers=HEADERS, params=QUERY)
-        return self.response.json()["locations"][0]["code"]
+        try:
+            self.response = requests.get(url=ENDPOINT, headers=HEADERS, params=QUERY)
+            self.response.raise_for_status()
+            self.locations = self.response.json().get("locations",[])
+            if self.locations:
+                return self.locations[0].get("code",None)
+            else:
+                print(f"No locations found for {city_name}." )
+                return None
+        except requests.exceptions.RequestException as e:
+            print(f"Failed to fetch airport code for {city_name}: {e}")
+            return None
